@@ -11,3 +11,6 @@ backups/
 cxm-backup-*.json
 cxm-demo-*.json
 cxm-cloud-*.json
+
+# GitHub Pages needs the intentionally public connection settings
+!docs/config.js

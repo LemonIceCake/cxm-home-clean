@@ -41,7 +41,7 @@ insert into public.household_members(household_id,user_id) values
 
 ## 後續 GitHub 與部署
 
-GitHub 私人儲存庫：https://github.com/LemonIceCake/cxm-home-clean 。網站原始碼、SQL 架構與測試由 GitHub 管理；Excel、JSON 財務備份及 config.js 不納入 Git。網站尚未部署。後續修改提交前請先檢查 git status。網站為靜態資源，可使用 GitHub Pages／Cloudflare Pages；只發布 index.html、app.js、model.js、style.css 與含公開 key 的 config.js。不要發布試算表、備份、SQL 管理檔。正式站需 HTTPS，設定 Supabase Site URL。公開網址的訪問者仍須登入，資料庫 RLS 才是財務資料權限邊界。依使用者要求，本次不公開部署。
+GitHub 私人儲存庫：https://github.com/LemonIceCake/cxm-home-clean 。網站原始碼、SQL 架構與測試由 GitHub 管理；Excel、JSON 財務備份及 config.js 不納入 Git。GitHub Pages 正式網址：https://lemonicecake.github.io/cxm-home-clean/ 。後續修改提交前請先檢查 git status。網站為靜態資源，可使用 GitHub Pages／Cloudflare Pages；只發布 index.html、app.js、model.js、style.css 與含公開 key 的 config.js。不要發布試算表、備份、SQL 管理檔。正式站需 HTTPS，設定 Supabase Site URL。公開網址的訪問者仍須登入，資料庫 RLS 才是財務資料權限邊界。依使用者要求，本次不公開部署。
 
 ## 青安 3.0 更新（2026-10-13）
 
@@ -56,3 +56,9 @@ GitHub 私人儲存庫：https://github.com/LemonIceCake/cxm-home-clean 。網�
 官方方案：https://www.nta.gov.tw/singlehtml/108?sectioninfo=5097763
 
 19 項自動測試通過；本次瀏覽器以獨立示範實测 40 年／5 年寬限、五階段變動、修改利率即時重算、計息模式切換。本次未登入正式家庭，不更動正式財務資料；新版設定的雲端儲存仍由使用者登入後驗證。
+
+## GitHub Pages
+
+正式網址：https://lemonicecake.github.io/cxm-home-clean/
+發布來源為 main 的 /docs，只有前端四個資源、公開 config.js 與 .nojekyll。Supabase Publishable key 為公開連線設定，資料安全依靠 Auth 與 RLS，不能放 Secret key。
+日後修改原始碼後執行 node build-pages.mjs，同步 docs，再一併提交。請使用 noreply Email。原 cxm-home 保留私人。
